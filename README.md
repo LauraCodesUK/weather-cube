@@ -29,7 +29,6 @@ The Weather Cube operates in two coordinated layers:
 | Layer | Purpose | Example Libraries |
 |--------|----------|------------------|
 | **Host Layer** | Fetches live API data, caches it locally or in the cloud, and exposes a simple `/weather.json` endpoint. | `requests`, `FastAPI`, `uvicorn`, `pandas`, `matplotlib` |
-
 | **Device Layer** | Runs on a microcontroller using MicroPython; periodically retrieves the cached JSON and updates LEDs / display accordingly. | `urequests`, `machine`, `time` |
 
 This separation keeps the device lightweight and allows the system to run even if the public API is temporarily unavailable.
