@@ -84,6 +84,7 @@ CITY=Birmingham,GB
 ```
 
 ## Project Structure 
+```plaintext
 weather-cube/
 ├─ host/
 │  ├─ app.py              # Optional FastAPI cache server
@@ -94,6 +95,7 @@ weather-cube/
 └─ device/
    ├─ main.py             # MicroPython logic (runs on ESP32 / Pico W)
    └─ lib/                # Hardware drivers (e.g. ssd1306.py for OLED)
+```
 
 ## Run Instructions
 *To be completed once initial host and device scripts are ready.*
