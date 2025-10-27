@@ -109,5 +109,6 @@ This project is licensed under the [MIT License](LICENSE).
 | Date | What I Did | What I Learned | Next Step |
 |------|-------------|----------------|------------|
 | 2025-10-27 | Created repo and README | Learned host/device split | 
+| 2025-10-27 | Created venv | Learned how to set up virtual environments and contextualised within the project | Write and test API weather code|
 
 *More to come as the project develops.*
