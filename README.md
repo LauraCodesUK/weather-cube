@@ -21,9 +21,11 @@ This repo documents my experiments and what I learn along the way.
 - **Display:** small OLED (SSD1306 128×64) / LED strip (WS2812B) / simple LEDs  
 - **Power:** USB 5 V supply or battery pack  
 - **Cable:** USB-C or Micro-USB **data** cable (not charge-only)  
-- **Optional:** breadboard, jumper wires, resistor, and cube-style enclosure  
+- **Optional:** breadboard, jumper wires, resistor, and cube-style enclosure
+- **Firmware:** MicroPython v1.26.1 (See [Firmware Installation](#firmware-installation) for setup steps.)
+- **Upload tools:** Thonny (recommended for beginners) / mpremote / rshell / VS Code with PyMakr or similar
 
-## ⚙️ Architecture
+## Architecture
 The Weather Cube operates in two coordinated layers:
 
 | Layer | Purpose | Example Libraries |
@@ -61,7 +63,18 @@ No pip installs — upload the following to your board:
 - **Modules used:** `urequests`, `machine`, `time`  
 - **Deployment:** Copy `device/main.py` to board → reset to run  
 
+## Firmware Installation
 
+This project was flashed with **MicroPython v1.26.1 (ESP32_GENERIC_S3)** using **Thonny IDE**.
+
+### Quick Steps
+1. Open *Thonny → Tools → Options → Interpreter*  
+2. Select **MicroPython (ESP32)** → click **Install or update MicroPython**  
+3. Choose **ESP32-S3** and select the downloaded `.bin` file  
+4. Wait for confirmation, then connect to the board and verify with:
+   ```python
+   print("Hello Cube!")
+   ```
 
 ## Configuration
 Create a `.env` file in the `host/` folder (not committed to GitHub) with:
