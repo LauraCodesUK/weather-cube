@@ -150,6 +150,7 @@ This project is licensed under the [MIT License](LICENSE).
 | Date | What I Did | What I Learned | Next Step |
 |------|-------------|----------------|------------|
 | 2025-10-27 | Created repo and README | Learned host/device split | 
-| 2025-10-27 | Created venv | Learned how to set up virtual environments and contextualised within the project | Write and test API weather code|
+| 2025-10-27 | Created venv and config.py | Learned how to set up virtual environments and contextualised within the project | Write and test API weather code|
+| 2025-10-27 | Created secrets file for microcontroller | Learned how to add specific files to .gitignore, and what a microcontroller needs to connect to WiFi | Write and test API weather code|
 
 *More to come as the project develops.*
