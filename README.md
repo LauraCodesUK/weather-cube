@@ -75,18 +75,51 @@ This project was flashed with **MicroPython v1.26.1 (ESP32_GENERIC_S3)** using *
    ```python
    print("Hello Cube!")
    ```
+## Environment & Secrets Configuration
+This project uses local environment files to store credentials and location data.
+Sensitive information such as Wi-Fi passwords or API keys should never be committed to GitHub.
 
-## Configuration
-Create a `.env` file in the `host/` folder (not committed to GitHub) with:
+### Host Environment (.env)
+The host environment (used for API requests, optional FastAPI, etc.) uses a .env file.
+An example file is provided at:
 ```bash
-# --- Wi-Fi / Network (optional, if host needs connectivity) ---
-WIFI_SSID="YourNetworkName"
-WIFI_PASSWORD="YourNetworkPassword"
-
-# --- Geolocation for weather API ---
-LATITUDE=52.75
-LONGITUDE=-1.94
+host/.env.example
 ```
+
+To use it:
+```bash
+# Copy the example file
+cp host/.env.example host/.env
+```
+
+Then edit host/.env to include:
+- Your Wi-Fi credentials (if needed)
+- Your latitude and longitude
+- Your Weather service API key (if applicable)
+
+The .env file is **ignored by Git**  (see .gitignore) for safety.
+
+### Device Secrets (secrets.py)
+
+The ESP32 device uses its own secrets file for Wi-Fi setup.
+An example file is provided at:
+```bash
+device/secrets.example.py
+```
+
+To use it:
+```bash
+# Copy the example file
+cp device/secrets.example.py device/secrets.py
+```
+
+Then edit device/secrets.py to include your:
+
+Wi-Fi SSID and password
+
+(Optional) API key or other constants
+
+**Never commit your real secrets.py** — it’s listed in .gitignore to protect your credentials.
 
 ## Project Structure 
 ```plaintext
@@ -99,6 +132,7 @@ weather-cube/
 │  └─ .gitignore          # Excludes .env, .venv, etc.
 └─ device/
    ├─ main.py             # MicroPython logic (runs on ESP32 / Pico W)
+   ├─ secrets.example     # Example of secrets variables to allow microcontroller to access WiFi/direct API
    └─ lib/                # Hardware drivers (e.g. ssd1306.py for OLED)
 ```
 
