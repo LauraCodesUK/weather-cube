@@ -79,8 +79,13 @@ This project was flashed with **MicroPython v1.26.1 (ESP32_GENERIC_S3)** using *
 ## Configuration
 Create a `.env` file in the `host/` folder (not committed to GitHub) with:
 ```bash
-OWM_API_KEY=your_api_key_here
-CITY=Birmingham,GB
+# --- Wi-Fi / Network (optional, if host needs connectivity) ---
+WIFI_SSID="YourNetworkName"
+WIFI_PASSWORD="YourNetworkPassword"
+
+# --- Geolocation for weather API ---
+LATITUDE=52.75
+LONGITUDE=-1.94
 ```
 
 ## Project Structure 
