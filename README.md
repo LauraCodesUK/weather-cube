@@ -174,5 +174,6 @@ This project is licensed under the [MIT License](LICENSE).
 | 2025-10-27 | Created repo and README | Learned host/device split | 
 | 2025-10-27 | Created venv and config.py | Learned how to set up virtual environments and contextualised within the project | Write and test API weather code|
 | 2025-10-27 | Created secrets file for microcontroller | Learned how to add specific files to .gitignore, and what a microcontroller needs to connect to WiFi | Write and test API weather code|
+| 2025-10-28 | Reviewed and updated project architecture structure, pivoting from a two-layer host/device approach to a simpler direct device-to-API architecture for the initial build. Updated README and `host/app.py` to reflect the revised structure and future optional host-layer plans. | Learned the importance of simplifying project scope early in development, separating “current implementation” from “future architecture,” and keeping documentation aligned with the actual working state of the project. | Verify board functionality and begin testing display control to ensure the ESP32-S3 can render custom output to the screen. |
 
 *More to come as the project develops.*
