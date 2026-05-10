@@ -57,26 +57,55 @@ This could later support:
 
 The host-side architecture is currently experimental and not required for the default build.
 
-## Tech Stack 
-**Host (desktop/raspberry Pi):** 
-Python • requests • FastAPI • matplotlib • uvicorn
+## Tech Stack
 
-**Device (on microcontroller):**
-MicroPython (ESP32/Pico W) • urequests • machine • time
+### Device (Current Primary Architecture)
+- MicroPython (ESP32-S3 / Pico W)
+- `urequests`
+- `machine`
+- `time`
+- ST7789 / SSD1306 display drivers (planned)
+
+### Optional Host Layer (Experimental / Future)
+- Python
+- requests
+- FastAPI
+- uvicorn
+- pandas
+- matplotlib
 
 ## Requirements
 
-**Host (pip)**
-requests
-fastapi
-uvicorn
-pandas
-matplotlib
+### Device Requirements (Current Build)
 
-**Device (MicroPython environment)**
-No pip installs — upload the following to your board:
+MicroPython environment running on ESP32-S3 or Pico W.
+
+Modules are uploaded directly to the board rather than installed with pip.
+
+Files currently used:
+
 - `main.py`
-- Any display drivers in `/lib` (e.g. `ssd1306.py`)
+- `wifi_connect.py`
+- `secrets.py`
+- display drivers in `/lib` (planned)
+
+---
+
+### Optional Host Requirements (Experimental)
+
+If using the optional FastAPI host layer:
+
+```bash
+pip install -r host/requirements.txt
+```
+
+Host dependencies currently include:
+
+- requests
+- fastapi
+- uvicorn
+- pandas
+- matplotlib
 
 ## Device Environment
 - **Firmware:** MicroPython v1.22 or newer  
