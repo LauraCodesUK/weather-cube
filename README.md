@@ -25,15 +25,37 @@ This repo documents my experiments and what I learn along the way.
 - **Firmware:** MicroPython v1.26.1 (See [Firmware Installation](#firmware-installation) for setup steps.)
 - **Upload tools:** Thonny (recommended for beginners) / mpremote / rshell / VS Code with PyMakr or similar
 
-## Architecture
-The Weather Cube operates in two coordinated layers:
+## Current Architecture
 
-| Layer | Purpose | Example Libraries |
-|--------|----------|------------------|
-| **Host Layer** | Fetches live API data, caches it locally or in the cloud, and exposes a simple `/weather.json` endpoint. | `requests`, `FastAPI`, `uvicorn`, `pandas`, `matplotlib` |
-| **Device Layer** | Runs on a microcontroller using MicroPython; periodically retrieves the cached JSON and updates LEDs / display accordingly. | `urequests`, `machine`, `time` |
+The current recommended setup uses a direct device-to-API architecture:
 
-This separation keeps the device lightweight and allows the system to run even if the public API is temporarily unavailable.
+```text
+ESP32-S3 Device → Open-Meteo API
+```
+
+The ESP32 connects directly to Wi-Fi, requests weather data from a public weather API, and displays the result locally on the screen.
+
+This keeps the project lightweight and beginner-friendly while I experiment with MicroPython, APIs, and hardware displays.
+
+---
+
+## Optional / Future Architecture
+
+A future optional architecture may introduce a lightweight host layer:
+
+```text
+ESP32-S3 Device → Local FastAPI Host → Weather API
+```
+
+This could later support:
+
+- local caching
+- reduced API calls
+- multi-device support
+- dashboards and analytics
+- offline-friendly behaviour
+
+The host-side architecture is currently experimental and not required for the default build.
 
 ## Tech Stack 
 **Host (desktop/raspberry Pi):** 
