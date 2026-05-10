@@ -126,6 +126,16 @@ This project was flashed with **MicroPython v1.26.1 (ESP32_GENERIC_S3)** using *
    ```python
    print("Hello Cube!")
    ```
+
+## External Libraries / References
+
+This project uses or experiments with the following open-source resources:
+
+- ST7789 MicroPython display driver:
+  https://github.com/russhughes/st7789py_mpy
+
+Additional references and experiments will be added as the project develops.
+
 ## Environment & Secrets Configuration
 This project uses local environment files to store credentials and location data.
 Sensitive information such as Wi-Fi passwords or API keys should never be committed to GitHub.
