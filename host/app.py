@@ -1,3 +1,4 @@
+## For use if using intermediary device 2-layer architecture where the ESP32 display pulls from desktop or Raspberry Pi
 from fastapi import FastAPI
 import requests
 from config import LATITUDE, LONGITUDE
